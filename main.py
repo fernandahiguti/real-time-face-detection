@@ -23,3 +23,9 @@ def add_margin(image, margin):
     else:
         return np.zeros((image.shape[0] + 2 * margin, image.shape[1] + 2 * margin, 3), dtype=np.uint8)
 
+def capture_and_save(frame, output_folder):
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    file_name = os.path.join(output_folder, f'captured_image_{timestamp}.png')
+    cv2.imwrite(file_name, frame)
+    print(f'Image saved as {file_name}')
+
