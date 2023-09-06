@@ -13,3 +13,7 @@ def load_logo(logo_path):
     else:
         return create_placeholder_logo()
 
+def create_placeholder_logo():
+    logo = np.ones((36, 36, 4), dtype=np.uint8) * 192 
+    return logo
+
